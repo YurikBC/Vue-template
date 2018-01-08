@@ -1,0 +1,6 @@
+@function get-vw($target) {
+  $vw-context: ($layoutWidth * .01);
+  @return ($target/$vw-context) * 1vw;
+}
+
+
