@@ -1,0 +1,200 @@
+@font-face {
+  font-family: 'ProximanovaBold';
+  src: url('static/fonts/32BE4A_0_0.eot?#iefix') format('embedded-opentype'),
+  url('static/fonts/32BE4C_0_0.woff2') format('woff2'),
+  url('static/fonts/32BE4C_0_0.woff') format('woff'),
+  url('static/fonts/32BE4C_0_0.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'ProximanovaExtraBold';
+  src: url('static/fonts/32EE05_0_0.eot?#iefix') format('embedded-opentype'),
+  url('static/fonts/32EE05_0_0.woff2') format('woff2'),
+  url('static/fonts/32EE05_0_0.woff') format('woff'),
+  url('static/fonts/32EE05_0_0.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'ProximanovaThin';
+  src: url('static/fonts/32EE05_2_0.eot?#iefix') format('embedded-opentype'),
+  url('static/fonts/32EE05_2_0.woff2') format('woff2'),
+  url('static/fonts/32EE05_2_0.woff') format('woff'),
+  url('static/fonts/32EE05_2_0.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'ProximanovaLight';
+  src: url('static/fonts/32EE05_1_0.eot?#iefix') format('embedded-opentype'),
+  url('static/fonts/32EE05_1_0.woff2') format('woff2'),
+  url('static/fonts/32EE05_1_0.woff') format('woff'),
+  url('static/fonts/32EE05_1_0.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'ProximanovaSemiBold';
+  src: url('static/fonts/32BE4A_2_0.eot?#iefix') format('embedded-opentype'),
+  url('static/fonts/32BE4C_2_0.woff2') format('woff2'),
+  url('static/fonts/32BE4C_2_0.woff') format('woff'),
+  url('static/fonts/32BE4C_2_0.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'ProximanovaRegular';
+  src: url('static/fonts/32BE4A_1_0.eot?#iefix') format('embedded-opentype'),
+  url('static/fonts/32BE4C_1_0.woff2') format('woff2'),
+  url('static/fonts/32BE4C_1_0.woff') format('woff'),
+  url('static/fonts/32BE4C_1_0.ttf') format('truetype');
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition-property: opacity;
+  transition-duration: 1s;
+}
+
+.fade-enter-active {
+  transition-delay: 1s;
+}
+
+.fade-enter, .fade-leave-active {
+  opacity: 0
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  * {  transition: none !important  }
+}
+
+body {
+  margin: 0;
+}
+
+//  1. box-shadow for container start ---------
+.box {
+  border-radius: 4px;
+  box-shadow: 0 0 28px rgba(0,0,0,0.13), 0 3px 3px rgba(0,0,0,0.13);
+}
+
+//  2. button --------
+.button {
+  position: relative;
+  border-radius: 4px;
+  color: white;
+  overflow: hidden;
+  transition: 0.25s;
+  cursor: pointer;
+  user-select: none;
+  outline: none;
+  border: none;
+  box-shadow: 0 0 28px rgba(0,0,0,0.13), 0 3px 3px rgba(0,0,0,0.13);
+}
+
+.ripple:after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 120px;
+  height: 120px;
+  margin-left: -60px;
+  margin-top: -60px;
+  background: #3f51b5;
+  border-radius: 100%;
+  opacity: .2;
+  transform: scale(0);
+}
+
+.button:hover {
+  filter: brightness(115%);
+}
+
+.default:active {
+  filter: brightness(95%);
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+  }
+  20% {
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+.ripple:not(:active):after {
+  animation: ripple 1s ease-out;
+}
+.ripple:after {
+  visibility: hidden;
+}
+.ripple:focus:after {
+  visibility: visible;
+}
+//  button end
+
+// 4.Disabled class ------
+.disabled {
+  user-select: none;
+  cursor: default;
+  opacity: 0.5;
+}
+
+.disabled:hover {
+  filter: none;
+}
+
+.disabled:active {
+  filter: none;
+}
+
+// 5.Loading ------
+.loading {
+  transition: 0s;
+  position: relative;
+  cursor: default;
+  color: transparent;
+  filter: brightness(115%);
+}
+
+.loading:before {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  margin-top: -15px;
+  margin-left: -15px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  border-top-color: #07d;
+  animation: loading .6s linear infinite;
+}
+
+@keyframes loading {
+  to {transform: rotate(360deg);}
+}
+
+// 6.input --------
+.input {
+  border-radius: 3px;
+  border: 1px solid #dddee1;
+  padding-left: 5px;
+  color: black;
+  outline: none;
+  transition: 0.3s;
+}
+.input:focus {
+  border: 1px solid #00c6ff;
+}
+
+
+
+
