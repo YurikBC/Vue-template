@@ -5,6 +5,7 @@ import store from './store'
 import { activate } from './router/routerController'
 require('../src/assets/style.scss')
 activate()
+/* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,

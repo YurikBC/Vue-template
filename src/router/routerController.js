@@ -4,7 +4,7 @@ import router from '../../src/router'
 export const activate = () => {
   router.beforeEach((to, from, next) => {
     next()
-    // ensureState(to, from, next)
+    ensureState(to, from, next)
   })
 }
 
